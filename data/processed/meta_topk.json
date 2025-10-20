@@ -1,0 +1,11 @@
+{
+  "tier": "gen9ou",
+  "month": "2024-05",
+  "top_mons": [
+    {"name": "Kingambit", "usage_pct": 28.4},
+    {"name": "Gholdengo", "usage_pct": 19.6},
+    {"name": "Great Tusk", "usage_pct": 24.1},
+    {"name": "Gliscor", "usage_pct": 18.2},
+    {"name": "Iron Valiant", "usage_pct": 17.5}
+  ]
+}

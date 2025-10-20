@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Garchomp",
+    "types": ["dragon", "ground"],
+    "roles": ["hazard-setter", "speed-control"],
+    "usage_pct": 7.5
+  },
+  {
+    "name": "Raging Bolt",
+    "types": ["electric", "dragon"],
+    "roles": ["special-attacker", "pivot"],
+    "usage_pct": 9.3
+  },
+  {
+    "name": "Great Tusk",
+    "types": ["ground", "fighting"],
+    "roles": ["hazard-removal", "physical-wall"],
+    "usage_pct": 24.1
+  }
+]

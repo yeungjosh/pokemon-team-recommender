@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Garchomp",
+    "types": ["dragon", "ground"],
+    "base_stats": {"hp": 108, "atk": 130, "def": 95, "spa": 80, "spd": 85, "spe": 102},
+    "abilities": ["rough-skin", "sand-veil"],
+    "learnset": ["earthquake", "dragon-claw", "stealth-rock", "swords-dance", "scale-shot"]
+  },
+  {
+    "name": "Raging Bolt",
+    "types": ["electric", "dragon"],
+    "base_stats": {"hp": 125, "atk": 73, "def": 91, "spa": 135, "spd": 101, "spe": 85},
+    "abilities": ["protosynthesis"],
+    "learnset": ["thunderclap", "dragon-pulse", "calm-mind", "thunderbolt", "volt-switch"]
+  },
+  {
+    "name": "Great Tusk",
+    "types": ["ground", "fighting"],
+    "base_stats": {"hp": 115, "atk": 131, "def": 131, "spa": 53, "spd": 53, "spe": 87},
+    "abilities": ["protosynthesis"],
+    "learnset": ["rapid-spin", "earthquake", "close-combat", "stealth-rock", "bulk-up"]
+  }
+]
