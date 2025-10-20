@@ -1,0 +1,21 @@
+# Core dependencies
+gradio>=4.0,<5.0
+pandas>=2.0,<3.0
+numpy>=1.24,<2.0
+pyarrow>=12.0,<14.0
+
+# Search and recommendation
+scikit-learn>=1.3,<2.0
+networkx>=3.0,<4.0
+
+# Phase 2: ML ranking (optional for MVP)
+lightgbm>=4.0,<5.0
+
+# Data fetching (optional)
+requests>=2.31,<3.0
+
+# Development dependencies (install separately with pip install -e ".[dev]")
+# ruff>=0.1.0
+# black>=23.0
+# pytest>=7.4
+# pytest-cov>=4.1
