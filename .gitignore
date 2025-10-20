@@ -38,8 +38,11 @@ ENV/
 .claude/
 .cursor/
 
-# Spec-kit cache
-.specify/.cache/
+# Development notes and planning (internal)
+CLAUDE.md
+.specify/
+*.spec.md
+*_spec.md
 
 # Data files (keep structure, ignore large files)
 data/raw/*.csv
