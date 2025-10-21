@@ -16,7 +16,9 @@ This file documents all data sources used in the Pokemon Team Recommender projec
 
 **Update Frequency:** As needed when new generations/forms are released
 
-**Last Updated:** [To be filled when data is fetched]
+**Last Updated:** 2025-10-21
+
+**Data Snapshot:** Pokemon Showdown repository (October 2025)
 
 ---
 
@@ -35,7 +37,9 @@ This file documents all data sources used in the Pokemon Team Recommender projec
 
 **Format:** CSV with columns: `name, usage_pct, tier, generation, month`
 
-**Last Updated:** [To be filled when data is fetched]
+**Last Updated:** 2025-10-21
+
+**Data Snapshot:** September 2025 (2025-09) Gen 9 OU stats
 
 **Notes:**
 - Usage percentages represent the proportion of teams that include each Pokémon
@@ -85,14 +89,14 @@ This file documents all data sources used in the Pokemon Team Recommender projec
 
 ## Data Snapshot Information
 
-**Current Data Version:** [To be filled]
+**Current Data Version:** v1.0 (October 2025)
 
 **Data Freshness:**
-- Pokédex: [Date]
-- Type Chart: [Date]
-- Usage Stats (Gen 9 OU): [Month/Year]
+- Pokédex: October 2025 (100 Pokemon)
+- Type Chart: Current (18 types)
+- Usage Stats (Gen 9 OU): September 2025
 
-**Next Scheduled Update:** [Date]
+**Next Scheduled Update:** December 2025 (monthly usage stats update)
 
 ---
 
