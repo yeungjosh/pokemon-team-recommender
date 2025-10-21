@@ -45,8 +45,9 @@ CLAUDE.md
 *_spec.md
 
 # Data files (keep structure, ignore large files)
-data/raw/*.csv
-data/raw/*.json
+# Note: We need type_chart.json, pokedex.json, and usage_ou.csv for deployment
+# data/raw/*.csv
+# data/raw/*.json
 data/processed/*.parquet
 data/processed/*.json
 
