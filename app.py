@@ -36,11 +36,22 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> str:
         if not recommendations:
             return "No recommendations found. Try different Pokémon!"
 
-        # Format results
+        # Format results with sprites
         result = f"## Top {len(recommendations)} Recommendations\n\n"
 
         for i, rec in enumerate(recommendations, 1):
             result += f"### #{i} - Score: {rec.composite_score:.3f}\n\n"
+
+            # Add sprites for the trio
+            sprite_row = ""
+            for mon_name in rec.pokemon_names:
+                mon = pokedex.get(mon_name)
+                if mon and mon.sprite:
+                    sprite_row += f'<img src="{mon.sprite}" width="96" height="96" style="display:inline-block; vertical-align:middle;" alt="{mon_name}"> '
+
+            if sprite_row:
+                result += f'{sprite_row}\n\n'
+
             result += f"**Trio:** {', '.join(rec.pokemon_names)}\n\n"
             result += f"**Breakdown:**\n"
             result += f"- Type Coverage: {rec.type_score:.3f}\n"
