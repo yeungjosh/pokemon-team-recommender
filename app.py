@@ -19,11 +19,14 @@ usage_stats = UsageStats()
 recommender = TeamRecommender(pokedex, type_chart, usage_stats)
 print("Data loaded successfully!")
 
+# Get list of available Pokemon for dropdown
+AVAILABLE_POKEMON = sorted(pokedex.pokemon.keys())
+
 
 def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> str:
     """Generate team recommendations based on input Pokemon."""
     if not all([mon1, mon2, mon3]):
-        return "❌ Please enter all 3 Pokémon names."
+        return "❌ Please select all 3 Pokémon."
 
     input_team = [mon1.strip(), mon2.strip(), mon3.strip()]
 
@@ -48,9 +51,23 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> str:
         return result
 
     except ValueError as e:
-        return f"❌ Error: {str(e)}"
+        error_msg = str(e)
+
+        # Improve error message with helpful suggestions
+        if "not found" in error_msg.lower():
+            # Extract the Pokemon name from error if possible
+            invalid_mon = error_msg.split(":")[-1].strip() if ":" in error_msg else ""
+
+            suggestion = f"❌ {error_msg}\n\n"
+            suggestion += "**Available Pokémon in Gen 9 OU:**\n"
+            suggestion += ", ".join(AVAILABLE_POKEMON[:8]) + ", ..."
+            suggestion += f"\n\n*({len(AVAILABLE_POKEMON)} total - use the dropdown to see all)*"
+            return suggestion
+
+        return f"❌ Error: {error_msg}"
+
     except Exception as e:
-        return f"❌ Unexpected error: {str(e)}\n\nPlease check Pokémon names and try again."
+        return f"❌ Unexpected error: {str(e)}\n\nPlease check your selections and try again."
 
 
 with gr.Blocks(title="Pokémon Team Recommender") as demo:
@@ -60,16 +77,31 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
 
         Complete your competitive team with data-driven suggestions.
 
-        **How it works:** Enter 3 Pokémon → Get 5 recommended trios based on type coverage, meta threats, and role balance.
+        **How it works:** Select 3 Pokémon → Get 5 recommended trios based on type coverage, meta threats, and role balance.
         """
     )
 
     with gr.Row():
         with gr.Column():
             gr.Markdown("### Your Team")
-            mon1 = gr.Textbox(label="Pokémon 1", placeholder="Garchomp")
-            mon2 = gr.Textbox(label="Pokémon 2", placeholder="Raging Bolt")
-            mon3 = gr.Textbox(label="Pokémon 3", placeholder="Great Tusk")
+            mon1 = gr.Dropdown(
+                label="Pokémon 1",
+                choices=AVAILABLE_POKEMON,
+                value="Garchomp",
+                allow_custom_value=True,
+            )
+            mon2 = gr.Dropdown(
+                label="Pokémon 2",
+                choices=AVAILABLE_POKEMON,
+                value="Raging Bolt",
+                allow_custom_value=True,
+            )
+            mon3 = gr.Dropdown(
+                label="Pokémon 3",
+                choices=AVAILABLE_POKEMON,
+                value="Great Tusk",
+                allow_custom_value=True,
+            )
 
             tier = gr.Dropdown(
                 label="Tier",
@@ -92,6 +124,19 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
     )
 
     submit.click(fn=recommend_team, inputs=[mon1, mon2, mon3, tier], outputs=output)
+
+    # Add "Show Available Pokémon" section
+    with gr.Accordion("📋 Show Available Pokémon", open=False):
+        available_list = "\n".join([f"- {mon}" for mon in AVAILABLE_POKEMON])
+        gr.Markdown(
+            f"""
+            ### All {len(AVAILABLE_POKEMON)} Pokémon in Gen 9 OU dataset:
+
+            {available_list}
+
+            *Note: Only these Pokémon are available for team building and recommendations.*
+            """
+        )
 
     gr.Markdown(
         """
