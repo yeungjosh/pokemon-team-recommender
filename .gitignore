@@ -64,3 +64,4 @@ logs/
 
 # Git worktrees
 worktrees/
+models/*.pkl
