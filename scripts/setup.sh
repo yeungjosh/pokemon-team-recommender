@@ -21,5 +21,6 @@ fi
 source venv/bin/activate
 pip install --upgrade pip -q
 pip install -r requirements.txt -q
+pip install pytest pytest-cov ruff black -q
 
 echo "Done! Activate with: source venv/bin/activate"
