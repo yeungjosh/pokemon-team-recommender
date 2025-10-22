@@ -107,6 +107,13 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
         """
     )
 
+    gr.Markdown(
+        f"""
+        > ℹ️ **Note:** This app currently supports **{len(AVAILABLE_POKEMON)} Pokémon** from the Gen 9 OU tier.
+        > See the "📋 Show Available Pokémon" section below for the full list.
+        """
+    )
+
     with gr.Row():
         with gr.Column():
             gr.Markdown("### Your Team")
