@@ -170,13 +170,66 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
             with explanation_accordion:
                 explanation_output = gr.Markdown()
 
-    gr.Examples(
-        examples=[
-            ["Garchomp", "Raging Bolt", "Great Tusk", "Gen 9 OU"],
-            ["Dragapult", "Kingambit", "Gholdengo", "Gen 9 OU"],
-        ],
-        inputs=[mon1, mon2, mon3, tier],
-    )
+    # Example Teams Section
+    with gr.Accordion("📋 Example Teams", open=False):
+        gr.Markdown("### Team 1: Balanced Offense")
+
+        # Team 1 sprites
+        gr.HTML("""
+            <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/garchomp.png" width="96" height="96" alt="Garchomp">
+                    <p style="margin-top: 5px; font-weight: bold;">Garchomp</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/raging-bolt.png" width="96" height="96" alt="Raging Bolt">
+                    <p style="margin-top: 5px; font-weight: bold;">Raging Bolt</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/great-tusk.png" width="96" height="96" alt="Great Tusk">
+                    <p style="margin-top: 5px; font-weight: bold;">Great Tusk</p>
+                </div>
+            </div>
+        """)
+
+        gr.Markdown("""
+            **Why it's strong:** Garchomp provides Stealth Rock and fast physical pressure. Raging Bolt is a special attacker with priority in Thunderclap. Great Tusk offers hazard removal with Rapid Spin plus Fighting coverage. This core balances physical/special threats and handles common meta picks like Kingambit and Gholdengo.
+        """)
+
+        gr.Button("Try Team 1", variant="secondary").click(
+            fn=lambda: ("Garchomp", "Raging Bolt", "Great Tusk"),
+            outputs=[mon1, mon2, mon3],
+        )
+
+        gr.Markdown("---")
+        gr.Markdown("### Team 2: Hyper Offense")
+
+        # Team 2 sprites
+        gr.HTML("""
+            <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/iron-valiant.png" width="96" height="96" alt="Iron Valiant">
+                    <p style="margin-top: 5px; font-weight: bold;">Iron Valiant</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/dragapult.png" width="96" height="96" alt="Dragapult">
+                    <p style="margin-top: 5px; font-weight: bold;">Dragapult</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/kingambit.png" width="96" height="96" alt="Kingambit">
+                    <p style="margin-top: 5px; font-weight: bold;">Kingambit</p>
+                </div>
+            </div>
+        """)
+
+        gr.Markdown("""
+            **Why it's strong:** Iron Valiant is a fast mixed attacker that pressures both offense and defense. Dragapult provides speed control and U-turn momentum. Kingambit acts as a revenge killer with Sucker Punch priority and can sweep late-game with Swords Dance. This team applies constant offensive pressure.
+        """)
+
+        gr.Button("Try Team 2", variant="secondary").click(
+            fn=lambda: ("Iron Valiant", "Dragapult", "Kingambit"),
+            outputs=[mon1, mon2, mon3],
+        )
 
     # Wire up recommendations and show accordion when results ready
     def recommend_and_show(mon1, mon2, mon3, tier):
