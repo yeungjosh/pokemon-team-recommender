@@ -1,0 +1,1682 @@
+[
+  {
+    "id": 1,
+    "name": "Balance Core 1",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Great Tusk",
+      "Raging Bolt",
+      "Rillaboom",
+      "Iron Valiant",
+      "Dragapult"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Balance Core 2",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Landorus-Therian",
+      "Toxapex",
+      "Heatran",
+      "Tapu Koko",
+      "Ferrothorn",
+      "Dragapult"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Balance Core 3",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Corviknight",
+      "Toxapex",
+      "Rillaboom",
+      "Heatran",
+      "Tapu Lele"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Balance Core 4",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Gholdengo",
+      "Corviknight",
+      "Primarina",
+      "Landorus-Therian",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Balance Core 5",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Toxapex",
+      "Landorus-Therian",
+      "Rillaboom",
+      "Heatran",
+      "Slowbro"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Balance Core 6",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Kingambit",
+      "Great Tusk",
+      "Gholdengo",
+      "Dragapult",
+      "Landorus-Therian",
+      "Toxapex"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Balance Core 7",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Raging Bolt",
+      "Corviknight",
+      "Great Tusk",
+      "Iron Valiant",
+      "Landorus-Therian",
+      "Slowking-Galar"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Balance Core 8",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Gliscor",
+      "Gholdengo",
+      "Primarina",
+      "Rillaboom",
+      "Iron Moth"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Balance Core 9",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Ting-Lu",
+      "Dragapult",
+      "Heatran",
+      "Landorus-Therian",
+      "Primarina",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Balance Core 10",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Zapdos",
+      "Garchomp",
+      "Toxapex",
+      "Rillaboom",
+      "Heatran",
+      "Slowking-Galar"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Balance Core 11",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Dragonite",
+      "Gholdengo",
+      "Landorus-Therian",
+      "Toxapex",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Balance Core 12",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Valiant",
+      "Corviknight",
+      "Ting-Lu",
+      "Heatran",
+      "Dragapult",
+      "Primarina"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Balance Core 13",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Slowbro",
+      "Rillaboom",
+      "Gholdengo",
+      "Zapdos",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Balance Core 14",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Kingambit",
+      "Great Tusk",
+      "Primarina",
+      "Dragapult",
+      "Landorus-Therian",
+      "Corviknight"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Balance Core 15",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Raging Bolt",
+      "Gliscor",
+      "Gholdengo",
+      "Iron Valiant",
+      "Primarina",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Balance Core 16",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Toxapex",
+      "Landorus-Therian",
+      "Rillaboom",
+      "Moltres",
+      "Ting-Lu"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Balance Core 17",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Heatran",
+      "Corviknight",
+      "Primarina",
+      "Kingambit",
+      "Dragonite"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Balance Core 18",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Moth",
+      "Ting-Lu",
+      "Landorus-Therian",
+      "Slowbro",
+      "Rillaboom",
+      "Dragapult"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Balance Core 19",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Toxapex",
+      "Gholdengo",
+      "Zapdos",
+      "Rillaboom",
+      "Iron Valiant"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Balance Core 20",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Raging Bolt",
+      "Corviknight",
+      "Great Tusk",
+      "Primarina",
+      "Landorus-Therian",
+      "Kingambit"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "HO 1",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Iron Valiant",
+      "Roaring Moon",
+      "Great Tusk",
+      "Gholdengo",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "HO 2",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Moth",
+      "Dragonite",
+      "Great Tusk",
+      "Kingambit",
+      "Raging Bolt",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "HO 3",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Roaring Moon",
+      "Iron Valiant",
+      "Garchomp",
+      "Rillaboom",
+      "Gholdengo",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "HO 4",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Dragonite",
+      "Kingambit",
+      "Iron Moth",
+      "Great Tusk",
+      "Raging Bolt"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "HO 5",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Valiant",
+      "Roaring Moon",
+      "Landorus-Therian",
+      "Gholdengo",
+      "Rillaboom",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "HO 6",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Garchomp",
+      "Iron Moth",
+      "Kingambit",
+      "Raging Bolt",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "HO 7",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Roaring Moon",
+      "Dragonite",
+      "Iron Valiant",
+      "Landorus-Therian",
+      "Rillaboom",
+      "Gholdengo"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "HO 8",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Moth",
+      "Dragapult",
+      "Great Tusk",
+      "Kingambit",
+      "Garchomp",
+      "Raging Bolt"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "HO 9",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Valiant",
+      "Roaring Moon",
+      "Dragonite",
+      "Gholdengo",
+      "Great Tusk",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "HO 10",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Landorus-Therian",
+      "Kingambit",
+      "Iron Moth",
+      "Garchomp",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "HO 11",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Roaring Moon",
+      "Iron Valiant",
+      "Raging Bolt",
+      "Gholdengo",
+      "Dragonite",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "HO 12",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Moth",
+      "Dragapult",
+      "Kingambit",
+      "Garchomp",
+      "Landorus-Therian",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "HO 13",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragonite",
+      "Iron Valiant",
+      "Roaring Moon",
+      "Great Tusk",
+      "Gholdengo",
+      "Raging Bolt"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "HO 14",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Kingambit",
+      "Iron Moth",
+      "Garchomp",
+      "Landorus-Therian",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "HO 15",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Roaring Moon",
+      "Dragonite",
+      "Raging Bolt",
+      "Rillaboom",
+      "Iron Valiant",
+      "Gholdengo"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "HO 16",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Moth",
+      "Dragapult",
+      "Great Tusk",
+      "Kingambit",
+      "Landorus-Therian",
+      "Garchomp"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "HO 17",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Valiant",
+      "Roaring Moon",
+      "Dragonite",
+      "Gholdengo",
+      "Raging Bolt",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "HO 18",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Garchomp",
+      "Kingambit",
+      "Iron Moth",
+      "Rillaboom",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "HO 19",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Roaring Moon",
+      "Iron Valiant",
+      "Great Tusk",
+      "Gholdengo",
+      "Dragonite",
+      "Raging Bolt"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "HO 20",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Iron Moth",
+      "Dragapult",
+      "Kingambit",
+      "Landorus-Therian",
+      "Garchomp",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Stall 1",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Ting-Lu",
+      "Clodsire",
+      "Gliscor",
+      "Alomomola"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Stall 2",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Clodsire",
+      "Ting-Lu",
+      "Blissey",
+      "Alomomola"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Stall 3",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Gliscor",
+      "Corviknight",
+      "Toxapex",
+      "Ting-Lu",
+      "Skeledirge",
+      "Alomomola"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Stall 4",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Clodsire",
+      "Gliscor",
+      "Dondozo",
+      "Ting-Lu"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Stall 5",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Ting-Lu",
+      "Alomomola",
+      "Blissey",
+      "Gliscor"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Stall 6",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Clodsire",
+      "Corviknight",
+      "Toxapex",
+      "Ting-Lu",
+      "Skeledirge",
+      "Dondozo"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Stall 7",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Gliscor",
+      "Corviknight",
+      "Toxapex",
+      "Clodsire",
+      "Alomomola",
+      "Ting-Lu"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Stall 8",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Ting-Lu",
+      "Blissey",
+      "Clodsire",
+      "Skeledirge"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Stall 9",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Gliscor",
+      "Corviknight",
+      "Toxapex",
+      "Dondozo",
+      "Ting-Lu",
+      "Alomomola"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Stall 10",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Clodsire",
+      "Ting-Lu",
+      "Blissey",
+      "Gliscor"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Stall 11",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Skeledirge",
+      "Ting-Lu",
+      "Clodsire",
+      "Alomomola"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Stall 12",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Gliscor",
+      "Corviknight",
+      "Toxapex",
+      "Ting-Lu",
+      "Dondozo",
+      "Blissey"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Stall 13",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Clodsire",
+      "Alomomola",
+      "Ting-Lu",
+      "Skeledirge"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Stall 14",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Gliscor",
+      "Corviknight",
+      "Toxapex",
+      "Ting-Lu",
+      "Blissey",
+      "Clodsire"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Stall 15",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Ting-Lu",
+      "Dondozo",
+      "Alomomola",
+      "Gliscor"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Rain 1",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Rotom-Wash",
+      "Ferrothorn",
+      "Kingambit",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Rain 2",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Ferrothorn",
+      "Kingambit",
+      "Garchomp",
+      "Rotom-Wash"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Rain 3",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Archaludon",
+      "Barraskewda",
+      "Landorus-Therian",
+      "Rotom-Wash",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Rain 4",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Kingambit",
+      "Ferrothorn",
+      "Landorus-Therian",
+      "Iron Valiant"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Rain 5",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Archaludon",
+      "Rotom-Wash",
+      "Garchomp",
+      "Barraskewda",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Rain 6",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Ferrothorn",
+      "Landorus-Therian",
+      "Kingambit",
+      "Rotom-Wash"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Rain 7",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Archaludon",
+      "Barraskewda",
+      "Iron Valiant",
+      "Rotom-Wash",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Rain 8",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Kingambit",
+      "Garchomp",
+      "Ferrothorn",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Rain 9",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Archaludon",
+      "Rotom-Wash",
+      "Barraskewda",
+      "Great Tusk",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Rain 10",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Ferrothorn",
+      "Kingambit",
+      "Iron Valiant",
+      "Rotom-Wash"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Rain 11",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Archaludon",
+      "Barraskewda",
+      "Landorus-Therian",
+      "Garchomp",
+      "Rotom-Wash"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Rain 12",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Kingambit",
+      "Ferrothorn",
+      "Great Tusk",
+      "Rotom-Wash"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Rain 13",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Archaludon",
+      "Barraskewda",
+      "Iron Valiant",
+      "Landorus-Therian",
+      "Rotom-Wash"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Rain 14",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Ferrothorn",
+      "Garchomp",
+      "Kingambit",
+      "Rotom-Wash"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Rain 15",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Archaludon",
+      "Rotom-Wash",
+      "Barraskewda",
+      "Landorus-Therian",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Sun 1",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Roaring Moon",
+      "Rillaboom",
+      "Landorus-Therian",
+      "Iron Moth"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Sun 2",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Iron Moth",
+      "Landorus-Therian",
+      "Great Tusk",
+      "Roaring Moon"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Sun 3",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Rillaboom",
+      "Iron Moth",
+      "Landorus-Therian",
+      "Garchomp"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Sun 4",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Roaring Moon",
+      "Great Tusk",
+      "Iron Moth",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Sun 5",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Landorus-Therian",
+      "Iron Moth",
+      "Garchomp",
+      "Roaring Moon"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Sun 6",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Rillaboom",
+      "Great Tusk",
+      "Iron Moth",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Sun 7",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Iron Moth",
+      "Roaring Moon",
+      "Garchomp",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Sun 8",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Landorus-Therian",
+      "Great Tusk",
+      "Iron Moth",
+      "Roaring Moon"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Sun 9",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Rillaboom",
+      "Iron Moth",
+      "Garchomp",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Sun 10",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Roaring Moon",
+      "Iron Moth",
+      "Great Tusk",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Bulky Offense 1",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Landorus-Therian",
+      "Garchomp",
+      "Rillaboom",
+      "Dragapult",
+      "Corviknight",
+      "Heatran"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Bulky Offense 2",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Gholdengo",
+      "Corviknight",
+      "Dragapult",
+      "Landorus-Therian",
+      "Primarina"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Bulky Offense 3",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Rillaboom",
+      "Slowbro",
+      "Dragapult",
+      "Heatran",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Bulky Offense 4",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Kingambit",
+      "Corviknight",
+      "Dragapult",
+      "Primarina",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Bulky Offense 5",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Gholdengo",
+      "Slowbro",
+      "Dragapult",
+      "Rillaboom",
+      "Heatran"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Bulky Offense 6",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Landorus-Therian",
+      "Great Tusk",
+      "Corviknight",
+      "Iron Valiant",
+      "Primarina",
+      "Gholdengo"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Bulky Offense 7",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Rillaboom",
+      "Slowbro",
+      "Dragapult",
+      "Landorus-Therian",
+      "Kingambit"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Bulky Offense 8",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Gholdengo",
+      "Corviknight",
+      "Dragapult",
+      "Heatran",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Bulky Offense 9",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Rillaboom",
+      "Slowbro",
+      "Iron Valiant",
+      "Primarina",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Bulky Offense 10",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Kingambit",
+      "Corviknight",
+      "Dragapult",
+      "Gholdengo",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Bulky Offense 11",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Rillaboom",
+      "Heatran",
+      "Dragapult",
+      "Slowbro",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Bulky Offense 12",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Gholdengo",
+      "Corviknight",
+      "Iron Valiant",
+      "Primarina",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Bulky Offense 13",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Kingambit",
+      "Slowbro",
+      "Dragapult",
+      "Rillaboom",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Bulky Offense 14",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Great Tusk",
+      "Gholdengo",
+      "Corviknight",
+      "Dragapult",
+      "Heatran",
+      "Primarina"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Bulky Offense 15",
+    "tier": "gen9ou",
+    "archetype": "bulky-offense",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Rillaboom",
+      "Slowbro",
+      "Iron Valiant",
+      "Landorus-Therian",
+      "Gholdengo"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Screens 1",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragonite",
+      "Iron Valiant",
+      "Roaring Moon",
+      "Kingambit",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Screens 2",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragapult",
+      "Iron Valiant",
+      "Garchomp",
+      "Kingambit",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Screens 3",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragonite",
+      "Roaring Moon",
+      "Iron Moth",
+      "Great Tusk",
+      "Kingambit"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Screens 4",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragapult",
+      "Iron Valiant",
+      "Garchomp",
+      "Roaring Moon",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Screens 5",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragonite",
+      "Iron Moth",
+      "Kingambit",
+      "Landorus-Therian",
+      "Iron Valiant"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Screens 6",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragapult",
+      "Roaring Moon",
+      "Great Tusk",
+      "Kingambit",
+      "Garchomp"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Screens 7",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragonite",
+      "Iron Valiant",
+      "Iron Moth",
+      "Roaring Moon",
+      "Great Tusk"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Screens 8",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragapult",
+      "Garchomp",
+      "Kingambit",
+      "Landorus-Therian",
+      "Iron Valiant"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Screens 9",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragonite",
+      "Roaring Moon",
+      "Great Tusk",
+      "Iron Moth",
+      "Kingambit"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Screens 10",
+    "tier": "gen9ou",
+    "archetype": "screens",
+    "source": "Curated",
+    "source_url": "",
+    "team": [
+      "Grimmsnarl",
+      "Dragapult",
+      "Iron Valiant",
+      "Garchomp",
+      "Roaring Moon",
+      "Landorus-Therian"
+    ]
+  }
+]
