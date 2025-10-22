@@ -73,7 +73,7 @@ git clone https://github.com/your-username/pokemon-team-recommender.git
 cd pokemon-team-recommender
 
 # Use the setup script (recommended)
-./.specify/scripts/bash/setup-dev.sh
+./scripts/setup.sh
 ```
 
 ### Manual Setup
