@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Balance Core",
+    "tier": "gen9ou",
+    "archetype": "balance",
+    "source": "Hand-crafted",
+    "source_url": "",
+    "team": [
+      "Garchomp",
+      "Great Tusk",
+      "Raging Bolt",
+      "Rillaboom",
+      "Iron Valiant",
+      "Dragapult"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Rain Offense",
+    "tier": "gen9ou",
+    "archetype": "rain",
+    "source": "Hand-crafted",
+    "source_url": "",
+    "team": [
+      "Pelipper",
+      "Barraskewda",
+      "Rotom-Wash",
+      "Ferrothorn",
+      "Kingambit",
+      "Landorus-Therian"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Hyper Offense",
+    "tier": "gen9ou",
+    "archetype": "hyperoffense",
+    "source": "Hand-crafted",
+    "source_url": "",
+    "team": [
+      "Dragapult",
+      "Iron Valiant",
+      "Roaring Moon",
+      "Great Tusk",
+      "Gholdengo",
+      "Rillaboom"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Defensive Stall",
+    "tier": "gen9ou",
+    "archetype": "stall",
+    "source": "Hand-crafted",
+    "source_url": "",
+    "team": [
+      "Toxapex",
+      "Corviknight",
+      "Ting-Lu",
+      "Clodsire",
+      "Gliscor",
+      "Alomomola"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sun Offense",
+    "tier": "gen9ou",
+    "archetype": "sun",
+    "source": "Hand-crafted",
+    "source_url": "",
+    "team": [
+      "Torkoal",
+      "Walking Wake",
+      "Roaring Moon",
+      "Rillaboom",
+      "Landorus-Therian",
+      "Iron Moth"
+    ]
+  }
+]
