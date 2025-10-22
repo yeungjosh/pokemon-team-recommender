@@ -50,9 +50,9 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
                 "type_score": top_rec.type_score,
                 "meta_score": top_rec.meta_score,
                 "role_score": top_rec.role_score,
-                "weaknesses_covered": getattr(top_rec, "weaknesses_covered", []),
-                "threats_handled": getattr(top_rec, "threats_handled", []),
-                "roles_added": getattr(top_rec, "roles_added", []),
+                "weaknesses_covered": top_rec.weaknesses_covered,
+                "threats_handled": top_rec.threats_handled,
+                "roles_added": top_rec.roles_added,
             },
         )
         explanation_markdown = format_layman_explanation(explanation_data)

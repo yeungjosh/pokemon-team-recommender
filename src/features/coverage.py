@@ -1,6 +1,6 @@
 """Type coverage analysis for Pokémon teams."""
 
-from typing import List
+
 from src.data.pokedex import Pokemon
 from src.data.types import TypeChart
 
@@ -11,7 +11,7 @@ class CoverageAnalyzer:
     def __init__(self, type_chart: TypeChart):
         self.type_chart = type_chart
 
-    def offensive_coverage_score(self, team: List[Pokemon]) -> float:
+    def offensive_coverage_score(self, team: list[Pokemon]) -> float:
         """
         Calculate offensive type coverage (0-1).
 
@@ -33,7 +33,7 @@ class CoverageAnalyzer:
 
         return len(covered_types) / 18.0
 
-    def defensive_coverage_score(self, team: List[Pokemon]) -> float:
+    def defensive_coverage_score(self, team: list[Pokemon]) -> float:
         """
         Calculate defensive type coverage (0-1).
 
@@ -63,7 +63,7 @@ class CoverageAnalyzer:
         return 1.0 - (penalty / 18.0)
 
     def type_coverage_score(
-        self, team: List[Pokemon], offensive_weight: float = 0.6, defensive_weight: float = 0.4
+        self, team: list[Pokemon], offensive_weight: float = 0.6, defensive_weight: float = 0.4
     ) -> float:
         """
         Calculate combined type coverage score.
@@ -75,7 +75,7 @@ class CoverageAnalyzer:
 
         return offensive_weight * offensive + defensive_weight * defensive
 
-    def get_team_weaknesses(self, team: List[Pokemon]) -> dict:
+    def get_team_weaknesses(self, team: list[Pokemon]) -> dict:
         """Get all attacking types and how many team members are weak to each."""
         weakness_counts = {}
 
@@ -90,7 +90,7 @@ class CoverageAnalyzer:
 
         return weakness_counts
 
-    def get_team_resistances(self, team: List[Pokemon]) -> dict:
+    def get_team_resistances(self, team: list[Pokemon]) -> dict:
         """Get all attacking types and how many team members resist each."""
         resistance_counts = {}
 
@@ -104,3 +104,39 @@ class CoverageAnalyzer:
                 resistance_counts[atk_type] = resist_count
 
         return resistance_counts
+
+    def get_weaknesses_covered(
+        self, input_team: list[Pokemon], full_team: list[Pokemon]
+    ) -> list[str]:
+        """
+        Get weaknesses that were improved by adding the trio.
+
+        A weakness is "covered" if:
+        1. Input team had 2+ weaknesses to that type with 0 resists
+        2. Full team has fewer weaknesses OR added resists
+
+        Returns:
+            List of type names that were covered/improved
+        """
+        covered = []
+        input_weaknesses = self.get_team_weaknesses(input_team)
+        input_resistances = self.get_team_resistances(input_team)
+        full_weaknesses = self.get_team_weaknesses(full_team)
+        full_resistances = self.get_team_resistances(full_team)
+
+        for atk_type in self.type_chart.types:
+            input_weak = input_weaknesses.get(atk_type, 0)
+            input_resist = input_resistances.get(atk_type, 0)
+            full_weak = full_weaknesses.get(atk_type, 0)
+            full_resist = full_resistances.get(atk_type, 0)
+
+            # Was this a problematic weakness? (2+ weaknesses, 0 resists)
+            was_problem = input_weak >= 2 and input_resist == 0
+
+            # Did adding the trio help? (added resists OR reduced weaknesses)
+            added_help = full_resist > input_resist or full_weak < input_weak
+
+            if was_problem and added_help:
+                covered.append(atk_type)
+
+        return covered

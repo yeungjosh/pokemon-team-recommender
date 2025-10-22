@@ -6,7 +6,22 @@ explanations for why specific Pokémon trios were recommended, enhancing
 transparency and user trust.
 """
 
+import random
+import re
 from dataclasses import dataclass
+
+from src.app.explanation_templates import (
+    EXPLANATION_HEADER,
+    META_MULTIPLE_THREATS_TEMPLATE,
+    META_SINGLE_THREAT_TEMPLATES,
+    ROLE_GENERAL_TEMPLATE,
+    ROLE_TEMPLATES,
+    SECTION_META,
+    SECTION_ROLE,
+    SECTION_TYPE,
+    TYPE_DEFENSIVE_TEMPLATES,
+    TYPE_MULTIPLE_TEMPLATE,
+)
 
 
 # T006: Define ExplanationData dataclass
@@ -100,22 +115,6 @@ class JargonTerm:
         "status absorber",
     }
 
-    ALLOWED_SIMPLE_TERMS = {
-        # Simple battle concepts (OK for layman)
-        "weakness",
-        "resistance",
-        "super effective",
-        "type coverage",
-        "popular",
-        "common threat",
-        "hazard control",
-        "hazard removal",
-        "speed control",
-        "pivot",
-        "pivoting",
-    }
-
-
 # T010: Implement contains_jargon()
 def contains_jargon(text: str) -> bool:
     """
@@ -133,8 +132,6 @@ def contains_jargon(text: str) -> bool:
         >>> contains_jargon("Provides Defog support")
         True  # "Defog" is jargon
     """
-    import re
-
     text_lower = text.lower()
     for term in JargonTerm.FORBIDDEN_TERMS:
         # Use word boundary matching to avoid false positives
@@ -271,13 +268,6 @@ def _generate_type_reasons(context: dict) -> list[str]:
         >>> len(reasons) > 0
         True
     """
-    import random
-
-    from src.app.explanation_templates import (
-        TYPE_DEFENSIVE_TEMPLATES,
-        TYPE_MULTIPLE_TEMPLATE,
-    )
-
     reasons = []
     weaknesses = context.get("weaknesses_covered", [])
 
@@ -320,13 +310,6 @@ def _generate_meta_reasons(context: dict) -> list[str]:
         >>> len(reasons) > 0
         True
     """
-    import random
-
-    from src.app.explanation_templates import (
-        META_MULTIPLE_THREATS_TEMPLATE,
-        META_SINGLE_THREAT_TEMPLATES,
-    )
-
     reasons = []
     threats = context.get("threats_handled", [])
 
@@ -370,10 +353,6 @@ def _generate_role_reasons(context: dict) -> list[str]:
         >>> len(reasons) > 0
         True
     """
-    import random
-
-    from src.app.explanation_templates import ROLE_GENERAL_TEMPLATE, ROLE_TEMPLATES
-
     reasons = []
     roles = context.get("roles_added", [])
 
@@ -481,13 +460,6 @@ def format_layman_explanation(explanation: ExplanationData) -> str:
         >>> "Rillaboom" in md
         True
     """
-    from src.app.explanation_templates import (
-        EXPLANATION_HEADER,
-        SECTION_META,
-        SECTION_ROLE,
-        SECTION_TYPE,
-    )
-
     # Build Pokemon list
     pokemon_list = ", ".join(explanation.pokemon_names)
 
