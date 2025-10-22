@@ -79,14 +79,17 @@ class MLTeamRecommender:
                 model_path = Path(__file__).parents[2] / "models" / "hybrid_ranker.pkl"
 
             if model_path.exists():
-                self.ml_ranker.load(model_path)
-                print(f"✓ Loaded ML model from {model_path}")
+                try:
+                    self.ml_ranker.load(model_path)
+                    print(f"✓ Loaded ML model from {model_path}")
+                except Exception as e:
+                    print(f"⚠️  Failed to load model: {e}")
+                    print("   Falling back to non-ML mode (rule-based scoring)")
+                    self.use_ml = False
             else:
                 print(f"⚠️  Model not found at {model_path}")
-                print("   Training new model...")
-                self.ml_ranker.train(pokedex, type_chart, usage_stats, n_samples=5000)
-                model_path.parent.mkdir(exist_ok=True, parents=True)
-                self.ml_ranker.save(model_path)
+                print("   Falling back to non-ML mode (rule-based scoring)")
+                self.use_ml = False
 
     def score_team(
         self, input_team: list[Pokemon], candidate_trio: list[Pokemon]
