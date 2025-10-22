@@ -177,7 +177,7 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
     # FAQ Section
     with gr.Accordion("❓ Frequently Asked Questions (FAQ)", open=False):
         gr.Markdown(
-            """
+            f"""
             ### What is Type Coverage?
             Type coverage refers to how well your team can deal with different Pokémon types.
 
@@ -220,7 +220,7 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
 
             Pokémon outside this tier (like Legendaries or lower-tier options) aren't included because they have
             different balance considerations and usage patterns.
-            """.format(len=len)
+            """
         )
 
     # ML Algorithm Explanation
