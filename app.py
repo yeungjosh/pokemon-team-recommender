@@ -171,49 +171,21 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
                 explanation_output = gr.Markdown()
 
     # Example Teams Section
-    with gr.Accordion("📋 Example Teams", open=False):
-        gr.Markdown("### Team 1: Balanced Offense")
+    with gr.Accordion("📋 Example Team (Full 6-Mon)", open=False):
+        gr.Markdown("### Balanced OU Team")
 
-        # Team 1 sprites
+        gr.Markdown("**Your Core (Enter these 3):**")
+
+        # Core 3 sprites
         gr.HTML("""
             <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
-                <div style="text-align: center;">
-                    <img src="https://img.pokemondb.net/sprites/home/normal/garchomp.png" width="96" height="96" alt="Garchomp">
-                    <p style="margin-top: 5px; font-weight: bold;">Garchomp</p>
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://img.pokemondb.net/sprites/home/normal/raging-bolt.png" width="96" height="96" alt="Raging Bolt">
-                    <p style="margin-top: 5px; font-weight: bold;">Raging Bolt</p>
-                </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/great-tusk.png" width="96" height="96" alt="Great Tusk">
                     <p style="margin-top: 5px; font-weight: bold;">Great Tusk</p>
                 </div>
-            </div>
-        """)
-
-        gr.Markdown("""
-            **Why it's strong:** Garchomp provides Stealth Rock and fast physical pressure. Raging Bolt is a special attacker with priority in Thunderclap. Great Tusk offers hazard removal with Rapid Spin plus Fighting coverage. This core balances physical/special threats and handles common meta picks like Kingambit and Gholdengo.
-        """)
-
-        gr.Button("Try Team 1", variant="secondary").click(
-            fn=lambda: ("Garchomp", "Raging Bolt", "Great Tusk"),
-            outputs=[mon1, mon2, mon3],
-        )
-
-        gr.Markdown("---")
-        gr.Markdown("### Team 2: Hyper Offense")
-
-        # Team 2 sprites
-        gr.HTML("""
-            <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
                 <div style="text-align: center;">
-                    <img src="https://img.pokemondb.net/sprites/home/normal/iron-valiant.png" width="96" height="96" alt="Iron Valiant">
-                    <p style="margin-top: 5px; font-weight: bold;">Iron Valiant</p>
-                </div>
-                <div style="text-align: center;">
-                    <img src="https://img.pokemondb.net/sprites/home/normal/dragapult.png" width="96" height="96" alt="Dragapult">
-                    <p style="margin-top: 5px; font-weight: bold;">Dragapult</p>
+                    <img src="https://img.pokemondb.net/sprites/home/normal/raging-bolt.png" width="96" height="96" alt="Raging Bolt">
+                    <p style="margin-top: 5px; font-weight: bold;">Raging Bolt</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/kingambit.png" width="96" height="96" alt="Kingambit">
@@ -222,14 +194,64 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
             </div>
         """)
 
-        gr.Markdown("""
-            **Why it's strong:** Iron Valiant is a fast mixed attacker that pressures both offense and defense. Dragapult provides speed control and U-turn momentum. Kingambit acts as a revenge killer with Sucker Punch priority and can sweep late-game with Swords Dance. This team applies constant offensive pressure.
-        """)
-
-        gr.Button("Try Team 2", variant="secondary").click(
-            fn=lambda: ("Iron Valiant", "Dragapult", "Kingambit"),
+        gr.Button("Load This Core", variant="secondary").click(
+            fn=lambda: ("Great Tusk", "Raging Bolt", "Kingambit"),
             outputs=[mon1, mon2, mon3],
         )
+
+        gr.Markdown("---")
+        gr.Markdown("**Complete 6-Pokemon Team:**")
+
+        # Full 6-mon team sprites
+        gr.HTML("""
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/great-tusk.png" width="80" height="80" alt="Great Tusk">
+                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Great Tusk</p>
+                    <p style="margin: 0; font-size: 0.8em; color: #888;">Hazard Control</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/raging-bolt.png" width="80" height="80" alt="Raging Bolt">
+                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Raging Bolt</p>
+                    <p style="margin: 0; font-size: 0.8em; color: #888;">Special Attacker</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/kingambit.png" width="80" height="80" alt="Kingambit">
+                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Kingambit</p>
+                    <p style="margin: 0; font-size: 0.8em; color: #888;">Priority Revenge Killer</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/gholdengo.png" width="80" height="80" alt="Gholdengo">
+                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Gholdengo</p>
+                    <p style="margin: 0; font-size: 0.8em; color: #888;">Hazard Immunity</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/corviknight.png" width="80" height="80" alt="Corviknight">
+                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Corviknight</p>
+                    <p style="margin: 0; font-size: 0.8em; color: #888;">Physical Wall</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://img.pokemondb.net/sprites/home/normal/slowking-galarian.png" width="80" height="80" alt="Slowking-Galar">
+                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Slowking-Galar</p>
+                    <p style="margin: 0; font-size: 0.8em; color: #888;">Special Wall + Pivot</p>
+                </div>
+            </div>
+        """)
+
+        gr.Markdown("""
+            **Why this team works:**
+
+            - **Great Tusk:** Rapid Spin removes hazards, provides Ground/Fighting coverage
+            - **Raging Bolt:** Thunderclap priority, special attacking threat with Dragon/Electric STAB
+            - **Kingambit:** Sucker Punch revenge killer, late-game sweeper with Swords Dance
+            - **Gholdengo:** Good as Gold ability blocks status moves, immune to hazards
+            - **Corviknight:** Physical wall with Defog, checks Fighting/Ground threats
+            - **Slowking-Galar:** Special wall with Future Sight pivot, handles Water/Fire types
+
+            This team has **hazard control** (Tusk/Corviknight), **pivots** (Corviknight), **priority** (Raging Bolt/Kingambit),
+            **defensive balance** (physical + special walls), and **type coverage** across 13+ types.
+        """)
+
 
     # Wire up recommendations and show accordion when results ready
     def recommend_and_show(mon1, mon2, mon3, tier):
