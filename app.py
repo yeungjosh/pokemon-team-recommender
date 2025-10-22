@@ -238,6 +238,12 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
         with gr.Column():
             gr.Markdown("### Your Team")
 
+            tier = gr.Dropdown(
+                label="Tier",
+                choices=["Gen 9 OU", "Gen 9 Ubers", "Gen 9 UU"],
+                value="Gen 9 OU",
+            )
+
             mon1 = gr.Dropdown(
                 label="Pokémon 1",
                 choices=AVAILABLE_POKEMON,
@@ -261,12 +267,6 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
                 allow_custom_value=True,
             )
             mon3_sprite = gr.HTML()
-
-            tier = gr.Dropdown(
-                label="Tier",
-                choices=["Gen 9 OU", "Gen 9 Ubers", "Gen 9 UU"],
-                value="Gen 9 OU",
-            )
 
             submit = gr.Button("Get Recommendations", variant="primary")
 
