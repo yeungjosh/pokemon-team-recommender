@@ -16,6 +16,7 @@ def pokemon_name_to_sprite_slug(name: str) -> str:
         "Landorus-Therian" -> "landorus-therian"
         "Ogerpon-Wellspring" -> "ogerpon-wellspring"
         "Samurott-Hisui" -> "samurott-hisuian"
+        "Slowking-Galar" -> "slowking-galarian"
         "Iron Valiant" -> "iron-valiant"
     """
     # Special case mappings
@@ -27,8 +28,17 @@ def pokemon_name_to_sprite_slug(name: str) -> str:
     if name in special_cases:
         return special_cases[name]
 
-    # Default: lowercase, replace spaces with hyphens
+    # Handle regional forms: -Galar -> -galarian, -Alola -> -alolan, -Hisui -> -hisuian
     slug = name.lower().replace(" ", "-")
+
+    # Fix regional form suffixes
+    if slug.endswith("-galar"):
+        slug = slug.replace("-galar", "-galarian")
+    elif slug.endswith("-alola"):
+        slug = slug.replace("-alola", "-alolan")
+    elif slug.endswith("-hisui"):
+        slug = slug.replace("-hisui", "-hisuian")
+
     return slug
 
 

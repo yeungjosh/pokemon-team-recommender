@@ -214,7 +214,7 @@
       "Flamethrower",
       "Thunder Wave"
     ],
-    "sprite": "https://img.pokemondb.net/sprites/home/normal/slowking-galar.png"
+    "sprite": "https://img.pokemondb.net/sprites/home/normal/slowking-galarian.png"
   },
   {
     "name": "Corviknight",
@@ -927,7 +927,7 @@
       "Pain Split",
       "Taunt"
     ],
-    "sprite": "https://img.pokemondb.net/sprites/home/normal/weezing-galar.png"
+    "sprite": "https://img.pokemondb.net/sprites/home/normal/weezing-galarian.png"
   },
   {
     "name": "Pelipper",
@@ -1164,7 +1164,7 @@
       "Encore",
       "Hail"
     ],
-    "sprite": "https://img.pokemondb.net/sprites/home/normal/ninetales-alola.png"
+    "sprite": "https://img.pokemondb.net/sprites/home/normal/ninetales-alolan.png"
   },
   {
     "name": "Ursaluna",
@@ -1807,7 +1807,7 @@
       "Body Press",
       "Acid Spray"
     ],
-    "sprite": "https://img.pokemondb.net/sprites/home/normal/goodra-hisui.png"
+    "sprite": "https://img.pokemondb.net/sprites/home/normal/goodra-hisuian.png"
   },
   {
     "name": "Arcanine-Hisui",
@@ -1831,7 +1831,7 @@
       "Stealth Rock",
       "Will-O-Wisp"
     ],
-    "sprite": "https://img.pokemondb.net/sprites/home/normal/arcanine-hisui.png"
+    "sprite": "https://img.pokemondb.net/sprites/home/normal/arcanine-hisuian.png"
   },
   {
     "name": "Ogerpon",
@@ -2045,7 +2045,7 @@
       "Knock Off",
       "Flamethrower"
     ],
-    "sprite": "https://img.pokemondb.net/sprites/home/normal/zoroark-hisui.png"
+    "sprite": "https://img.pokemondb.net/sprites/home/normal/zoroark-hisuian.png"
   },
   {
     "name": "Slither Wing",
