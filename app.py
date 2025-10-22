@@ -35,6 +35,97 @@ def get_pokemon_sprite(mon_name: str) -> str:
     return ""
 
 
+def recommend_moves(pokemon: "Pokemon") -> list[str]:
+    """Recommend 4 moves for a Pokemon based on their learnset and role."""
+    if not pokemon or not pokemon.learnset:
+        return []
+
+    # Priority order for move selection
+    priority_moves = {"Sucker Punch", "Extreme Speed", "Aqua Jet", "Mach Punch", "Ice Shard", "Thunderclap"}
+    setup_moves = {"Swords Dance", "Nasty Plot", "Calm Mind", "Dragon Dance"}
+    utility_moves = {"Stealth Rock", "Spikes", "Toxic Spikes", "Rapid Spin", "Defog", "U-turn", "Volt Switch", "Flip Turn"}
+
+    selected = []
+    learnset = set(pokemon.learnset)
+
+    # 1. Priority: Utility moves (hazards, removal, pivots)
+    for move in utility_moves:
+        if move in learnset and len(selected) < 4:
+            selected.append(move)
+
+    # 2. Priority: Setup moves
+    for move in setup_moves:
+        if move in learnset and len(selected) < 4:
+            selected.append(move)
+
+    # 3. Priority: Priority moves
+    for move in priority_moves:
+        if move in learnset and len(selected) < 4:
+            selected.append(move)
+
+    # 4. Fill remaining slots with strongest STAB/coverage moves
+    remaining = [m for m in pokemon.learnset if m not in selected]
+    for move in remaining:
+        if len(selected) < 4:
+            selected.append(move)
+
+    return selected[:4]
+
+
+def analyze_team_strength(user_team_names: list[str], recommended_names: list[str]) -> str:
+    """Generate a brief analysis of why the complete 6-mon team is strong."""
+    full_team = [pokedex.get(name) for name in user_team_names + recommended_names if pokedex.get(name)]
+
+    if len(full_team) != 6:
+        return ""
+
+    # Analyze team composition
+    all_types = set()
+    roles = set()
+    has_hazards = False
+    has_removal = False
+    has_pivot = False
+    has_priority = False
+
+    for mon in full_team:
+        all_types.update(mon.types)
+        mon_roles = set()
+
+        for move in mon.learnset:
+            if move in {"Stealth Rock", "Spikes", "Toxic Spikes"}:
+                has_hazards = True
+                mon_roles.add("hazard setter")
+            if move in {"Rapid Spin", "Defog"}:
+                has_removal = True
+                mon_roles.add("hazard control")
+            if move in {"U-turn", "Volt Switch", "Flip Turn"}:
+                has_pivot = True
+                mon_roles.add("pivot")
+            if move in {"Sucker Punch", "Extreme Speed", "Aqua Jet", "Thunderclap", "Ice Shard"}:
+                has_priority = True
+                mon_roles.add("priority")
+
+        roles.update(mon_roles)
+
+    # Build analysis
+    analysis = "**Why this team is strong:** "
+    strengths = []
+
+    if has_hazards:
+        strengths.append("✅ Hazard setting")
+    if has_removal:
+        strengths.append("✅ Hazard control")
+    if has_pivot:
+        strengths.append("✅ Momentum with pivots")
+    if has_priority:
+        strengths.append("✅ Priority revenge killing")
+
+    type_count = len(all_types)
+    strengths.append(f"✅ {type_count}-type coverage")
+
+    return analysis + " • ".join(strengths) + "."
+
+
 def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str]:
     """Generate team recommendations based on input Pokemon."""
     if not all([mon1, mon2, mon3]):
@@ -82,6 +173,24 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
                 result += f'{sprite_row}\n\n'
 
             result += f"**Trio:** {', '.join(rec.pokemon_names)}\n\n"
+
+            # Add recommended moves for each Pokemon
+            result += "**Recommended Moves:**\n"
+            for mon_name in rec.pokemon_names:
+                mon = pokedex.get(mon_name)
+                if mon:
+                    moves = recommend_moves(mon)
+                    if moves:
+                        result += f"- **{mon_name}:** {' / '.join(moves)}\n"
+
+            result += "\n"
+
+            # Add team strength analysis for top recommendation
+            if i == 1:
+                team_analysis = analyze_team_strength(input_team, rec.pokemon_names)
+                if team_analysis:
+                    result += f"{team_analysis}\n\n"
+
             result += "**Breakdown:**\n"
             result += f"- Type Coverage: {rec.type_score:.3f}\n"
             result += f"- Meta Matchup: {rec.meta_score:.3f}\n"
