@@ -106,7 +106,7 @@ def test_performance(pokedex, type_chart, usage_stats):
     # Test with pool size 50
     print("Testing with pool size 50...")
     start = time.time()
-    recs = recommender.recommend(
+    recommender.recommend(
         ["Garchomp", "Raging Bolt", "Great Tusk"],
         top_k=5,
         candidate_pool_size=50
@@ -114,7 +114,7 @@ def test_performance(pokedex, type_chart, usage_stats):
     elapsed = time.time() - start
 
     print(f"  Time: {elapsed:.2f}s (target: <2s)")
-    print(f"  Combinations evaluated: C(50,3) = 19,600")
+    print("  Combinations evaluated: C(50,3) = 19,600")
 
     if elapsed < 2.0:
         print("  ✓ Performance target met!")

@@ -758,7 +758,7 @@ def build_dataset():
             })
 
     print(f"✓ Saved {len(COMPREHENSIVE_POKEMON_DATA)} entries to usage_ou.csv")
-    print(f"\n✓ Dataset expansion complete!")
+    print("\n✓ Dataset expansion complete!")
     print(f"  Expanded from 15 → {len(COMPREHENSIVE_POKEMON_DATA)} Pokemon")
 
 

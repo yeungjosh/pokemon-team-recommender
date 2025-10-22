@@ -166,8 +166,13 @@ POKEMON_DATA.update(ADDITIONAL_POKEMON)
 
 
 def main():
-    # Parse usage stats
-    usage_file = Path("/tmp/gen9ou-usage.txt")
+    # Parse usage stats (relative to script location)
+    usage_file = Path(__file__).parents[1] / "tmp" / "gen9ou-usage.txt"
+    if not usage_file.exists():
+        print(f"Error: Usage file not found at {usage_file}")
+        print("Please download usage stats first or update the path.")
+        return
+
     pokemon_usage = parse_usage_stats(usage_file, top_n=100)
 
     print(f"Parsed {len(pokemon_usage)} Pokemon from usage stats")
@@ -197,8 +202,9 @@ def main():
 
     print(f"\nBuilt dataset with {len(pokedex)} Pokemon")
 
-    # Save pokedex.json
-    output_dir = Path("/Users/joshyeung/personal-projects/pokemon-team-recommender/worktrees/expand-pokemon-dataset/data/raw")
+    # Save pokedex.json (relative to script location)
+    output_dir = Path(__file__).parents[1] / "data" / "raw"
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     with open(output_dir / "pokedex.json", 'w') as f:
         json.dump(pokedex, f, indent=2)
