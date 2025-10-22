@@ -4,6 +4,7 @@ Pokemon Team Recommender - Gradio UI
 Entry point for the Hugging Face Spaces deployment.
 """
 
+import markdown
 import gradio as gr
 
 from src.app.explanations import format_layman_explanation, generate_explanation
@@ -77,7 +78,9 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
             result += f"- Role Diversity: {rec.role_score:.3f}\n\n"
             result += "---\n\n"
 
-        return result, explanation_markdown
+        # Convert markdown to HTML for proper rendering with sprites
+        result_html = markdown.markdown(result, extensions=['extra'])
+        return result_html, explanation_markdown
 
     except ValueError as e:
         error_msg = str(e)
@@ -88,12 +91,12 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
             suggestion += "**Available Pokémon in Gen 9 OU:**\n"
             suggestion += ", ".join(AVAILABLE_POKEMON[:8]) + ", ..."
             suggestion += f"\n\n*({len(AVAILABLE_POKEMON)} total - use the dropdown to see all)*"
-            return suggestion, ""
+            return markdown.markdown(suggestion), ""
 
-        return f"❌ Error: {error_msg}", ""
+        return markdown.markdown(f"❌ Error: {error_msg}"), ""
 
     except Exception as e:
-        return f"❌ Unexpected error: {str(e)}\n\nPlease check your selections and try again.", ""
+        return markdown.markdown(f"❌ Unexpected error: {str(e)}\n\nPlease check your selections and try again."), ""
 
 
 with gr.Blocks(title="Pokémon Team Recommender") as demo:
@@ -146,7 +149,7 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
 
         with gr.Column():
             gr.Markdown("### Recommendations")
-            output = gr.Markdown()
+            output = gr.HTML()
 
             # Explanation accordion (only visible after recommendations generated)
             explanation_accordion = gr.Accordion("❓ How did you choose these?", open=False, visible=False)
