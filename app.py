@@ -244,6 +244,8 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
                 value="Gen 9 OU",
             )
 
+            gr.Markdown("---")
+
             mon1 = gr.Dropdown(
                 label="Pokémon 1",
                 choices=AVAILABLE_POKEMON,
