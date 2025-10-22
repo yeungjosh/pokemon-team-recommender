@@ -107,23 +107,23 @@ def analyze_team_strength(user_team_names: list[str], recommended_names: list[st
 
         roles.update(mon_roles)
 
-    # Build analysis
-    analysis = "**Why this team is strong:** "
+    # Build analysis as a list
+    analysis = "**Why this team is strong:**\n"
     strengths = []
 
     if has_hazards:
-        strengths.append("✅ Hazard setting")
+        strengths.append("- ✅ Hazard setting")
     if has_removal:
-        strengths.append("✅ Hazard control")
+        strengths.append("- ✅ Hazard control")
     if has_pivot:
-        strengths.append("✅ Momentum with pivots")
+        strengths.append("- ✅ Momentum with pivots")
     if has_priority:
-        strengths.append("✅ Priority revenge killing")
+        strengths.append("- ✅ Priority revenge killing")
 
     type_count = len(all_types)
-    strengths.append(f"✅ {type_count}-type coverage")
+    strengths.append(f"- ✅ {type_count}-type coverage")
 
-    return analysis + " • ".join(strengths) + "."
+    return analysis + "\n".join(strengths) + "\n"
 
 
 def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str]:
@@ -185,11 +185,10 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
 
             result += "\n"
 
-            # Add team strength analysis for top recommendation
-            if i == 1:
-                team_analysis = analyze_team_strength(input_team, rec.pokemon_names)
-                if team_analysis:
-                    result += f"{team_analysis}\n\n"
+            # Add team strength analysis for all recommendations
+            team_analysis = analyze_team_strength(input_team, rec.pokemon_names)
+            if team_analysis:
+                result += f"{team_analysis}\n"
 
             result += "**Breakdown:**\n"
             result += f"- Type Coverage: {rec.type_score:.3f}\n"
