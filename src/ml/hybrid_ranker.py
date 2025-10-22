@@ -4,10 +4,10 @@ Uses rule-based scoring as features and learns optimal weights via ML.
 """
 
 import json
-import pickle
 from pathlib import Path
 from typing import List, Tuple
 
+import joblib
 import numpy as np
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
@@ -192,13 +192,11 @@ class HybridRanker:
 
     def save(self, path: Path):
         """Save trained model to disk."""
-        with open(path, "wb") as f:
-            pickle.dump(self.model, f)
+        joblib.dump(self.model, path, compress=3)
         print(f"Model saved to {path}")
 
     def load(self, path: Path):
         """Load trained model from disk."""
-        with open(path, "rb") as f:
-            self.model = pickle.load(f)
+        self.model = joblib.load(path)
         self.is_trained = True
         print(f"Model loaded from {path}")
