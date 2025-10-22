@@ -14,6 +14,7 @@ class Pokemon:
     types: List[str]
     base_stats: Dict[str, int]
     learnset: List[str]
+    sprite: str = ""
 
     @property
     def speed(self) -> int:
@@ -41,6 +42,7 @@ class Pokedex:
                 types=entry["types"],
                 base_stats=entry["baseStats"],
                 learnset=entry["learnset"],
+                sprite=entry.get("sprite", ""),
             )
             self.pokemon[mon.name] = mon
 
