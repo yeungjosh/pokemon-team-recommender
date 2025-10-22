@@ -6,6 +6,7 @@ Entry point for the Hugging Face Spaces deployment.
 
 import gradio as gr
 
+from src.app.explanations import format_layman_explanation, generate_explanation
 from src.data.pokedex import Pokedex
 from src.data.types import TypeChart
 from src.data.usage import UsageStats
@@ -23,10 +24,10 @@ print("Data loaded successfully!")
 AVAILABLE_POKEMON = sorted(pokedex.pokemon.keys())
 
 
-def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> str:
+def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str]:
     """Generate team recommendations based on input Pokemon."""
     if not all([mon1, mon2, mon3]):
-        return "❌ Please select all 3 Pokémon."
+        return "❌ Please select all 3 Pokémon.", ""
 
     input_team = [mon1.strip(), mon2.strip(), mon3.strip()]
 
@@ -34,10 +35,27 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> str:
         recommendations = recommender.recommend(input_team, top_k=5, candidate_pool_size=12)
 
         if not recommendations:
-            return "No recommendations found. Try different Pokémon!"
+            return "No recommendations found. Try different Pokémon!", ""
 
         # Format results with sprites
         result = f"## Top {len(recommendations)} Recommendations\n\n"
+
+        # Generate explanation for the top recommendation
+        top_rec = recommendations[0]
+        explanation_data = generate_explanation(
+            user_team=input_team,
+            recommended_trio=top_rec.pokemon_names,
+            scores={
+                "composite_score": top_rec.composite_score,
+                "type_score": top_rec.type_score,
+                "meta_score": top_rec.meta_score,
+                "role_score": top_rec.role_score,
+                "weaknesses_covered": getattr(top_rec, "weaknesses_covered", []),
+                "threats_handled": getattr(top_rec, "threats_handled", []),
+                "roles_added": getattr(top_rec, "roles_added", []),
+            },
+        )
+        explanation_markdown = format_layman_explanation(explanation_data)
 
         for i, rec in enumerate(recommendations, 1):
             result += f"### #{i} - Score: {rec.composite_score:.3f}\n\n"
@@ -53,32 +71,29 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> str:
                 result += f'{sprite_row}\n\n'
 
             result += f"**Trio:** {', '.join(rec.pokemon_names)}\n\n"
-            result += f"**Breakdown:**\n"
+            result += "**Breakdown:**\n"
             result += f"- Type Coverage: {rec.type_score:.3f}\n"
             result += f"- Meta Matchup: {rec.meta_score:.3f}\n"
             result += f"- Role Diversity: {rec.role_score:.3f}\n\n"
             result += "---\n\n"
 
-        return result
+        return result, explanation_markdown
 
     except ValueError as e:
         error_msg = str(e)
 
         # Improve error message with helpful suggestions
         if "not found" in error_msg.lower():
-            # Extract the Pokemon name from error if possible
-            invalid_mon = error_msg.split(":")[-1].strip() if ":" in error_msg else ""
-
             suggestion = f"❌ {error_msg}\n\n"
             suggestion += "**Available Pokémon in Gen 9 OU:**\n"
             suggestion += ", ".join(AVAILABLE_POKEMON[:8]) + ", ..."
             suggestion += f"\n\n*({len(AVAILABLE_POKEMON)} total - use the dropdown to see all)*"
-            return suggestion
+            return suggestion, ""
 
-        return f"❌ Error: {error_msg}"
+        return f"❌ Error: {error_msg}", ""
 
     except Exception as e:
-        return f"❌ Unexpected error: {str(e)}\n\nPlease check your selections and try again."
+        return f"❌ Unexpected error: {str(e)}\n\nPlease check your selections and try again.", ""
 
 
 with gr.Blocks(title="Pokémon Team Recommender") as demo:
@@ -126,6 +141,10 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
             gr.Markdown("### Recommendations")
             output = gr.Markdown()
 
+            # T039: Add explanation accordion (closed by default)
+            with gr.Accordion("❓ How did you choose these?", open=False):
+                explanation_output = gr.Markdown()
+
     gr.Examples(
         examples=[
             ["Garchomp", "Raging Bolt", "Great Tusk", "Gen 9 OU"],
@@ -134,7 +153,12 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
         inputs=[mon1, mon2, mon3, tier],
     )
 
-    submit.click(fn=recommend_team, inputs=[mon1, mon2, mon3, tier], outputs=output)
+    # T040: Wire up accordion to display layman explanations
+    submit.click(
+        fn=recommend_team,
+        inputs=[mon1, mon2, mon3, tier],
+        outputs=[output, explanation_output],
+    )
 
     # Add "Show Available Pokémon" section
     with gr.Accordion("📋 Show Available Pokémon", open=False):
