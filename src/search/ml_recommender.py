@@ -83,13 +83,17 @@ class MLTeamRecommender:
                     self.ml_ranker.load(model_path)
                     print(f"✓ Loaded ML model from {model_path}")
                 except Exception as e:
-                    print(f"⚠️  Failed to load model: {e}")
-                    print("   Falling back to non-ML mode (rule-based scoring)")
-                    self.use_ml = False
+                    print(f"⚠️  Failed to load model (numpy version mismatch): {e}")
+                    print("   Training new model with local environment...")
+                    self.ml_ranker.train(pokedex, type_chart, usage_stats, n_samples=5000)
+                    print("✓ Model trained successfully")
             else:
                 print(f"⚠️  Model not found at {model_path}")
-                print("   Falling back to non-ML mode (rule-based scoring)")
-                self.use_ml = False
+                print("   Training new model...")
+                self.ml_ranker.train(pokedex, type_chart, usage_stats, n_samples=5000)
+                model_path.parent.mkdir(exist_ok=True, parents=True)
+                self.ml_ranker.save(model_path)
+                print("✓ Model trained and saved")
 
     def score_team(
         self, input_team: list[Pokemon], candidate_trio: list[Pokemon]
