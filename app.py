@@ -35,29 +35,6 @@ def get_pokemon_sprite(mon_name: str) -> str:
     return ""
 
 
-def get_full_team_display(mon1: str, mon2: str, mon3: str) -> str:
-    """Generate HTML display for the complete team."""
-    if not all([mon1, mon2, mon3]):
-        return ""
-
-    team_html = '<div style="text-align: center; margin: 20px 0;">'
-    team_html += '<h3 style="margin-bottom: 15px;">Your Complete Team</h3>'
-    team_html += '<div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">'
-
-    for mon_name in [mon1, mon2, mon3]:
-        mon = pokedex.get(mon_name)
-        if mon and mon.sprite:
-            team_html += f'''
-            <div style="text-align: center;">
-                <img src="{mon.sprite}" width="96" height="96" alt="{mon_name}">
-                <p style="margin-top: 5px; font-weight: bold;">{mon_name}</p>
-            </div>
-            '''
-
-    team_html += '</div></div>'
-    return team_html
-
-
 def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str]:
     """Generate team recommendations based on input Pokemon."""
     if not all([mon1, mon2, mon3]):
@@ -323,27 +300,14 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
             """
         )
 
-    # Display complete team at bottom
-    gr.Markdown("---")
-    team_display = gr.HTML()
-
-    # Update team display when any Pokemon selection changes
-    for dropdown in [mon1, mon2, mon3]:
-        dropdown.change(
-            fn=get_full_team_display,
-            inputs=[mon1, mon2, mon3],
-            outputs=[team_display],
-        )
-
-    # Load initial sprites and team display on page load
+    # Load initial sprites on page load
     demo.load(
         fn=lambda: (
             get_pokemon_sprite("Garchomp"),
             get_pokemon_sprite("Raging Bolt"),
             get_pokemon_sprite("Great Tusk"),
-            get_full_team_display("Garchomp", "Raging Bolt", "Great Tusk"),
         ),
-        outputs=[mon1_sprite, mon2_sprite, mon3_sprite, team_display],
+        outputs=[mon1_sprite, mon2_sprite, mon3_sprite],
     )
 
     gr.Markdown(
