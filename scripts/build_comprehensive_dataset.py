@@ -2,7 +2,12 @@
 """
 Build comprehensive Pokemon dataset from top 100 Gen 9 OU Pokemon.
 
-Curated data based on Pokemon Showdown and Smogon resources.
+This is the PRIMARY dataset builder for the project. It generates:
+- data/raw/pokedex.json: Pokemon metadata (types, stats, moves)
+- data/raw/usage_ou.csv: Usage statistics from Smogon
+
+Data is curated from Pokemon Showdown and Smogon usage stats (Sept 2025).
+Run this script to regenerate the dataset if needed.
 """
 
 import json
