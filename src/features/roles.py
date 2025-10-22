@@ -1,8 +1,7 @@
 """Role detection for Pokémon based on learnsets and stats."""
 
-from typing import List, Set
-from src.data.pokedex import Pokemon
 
+from src.data.pokedex import Pokemon
 
 # Role-defining moves
 HAZARD_MOVES = {"Stealth Rock", "Spikes", "Toxic Spikes"}
@@ -25,7 +24,7 @@ class RoleDetector:
     """Detect competitive roles for Pokémon."""
 
     @staticmethod
-    def detect_roles(pokemon: Pokemon) -> Set[str]:
+    def detect_roles(pokemon: Pokemon) -> set[str]:
         """
         Detect all roles a Pokémon can fill.
 
@@ -56,7 +55,7 @@ class RoleDetector:
         return roles
 
     @staticmethod
-    def team_role_coverage(team: List[Pokemon]) -> Set[str]:
+    def team_role_coverage(team: list[Pokemon]) -> set[str]:
         """Get all roles covered by a team."""
         all_roles = set()
         for mon in team:
@@ -64,7 +63,7 @@ class RoleDetector:
         return all_roles
 
     @staticmethod
-    def role_diversity_score(team: List[Pokemon]) -> float:
+    def role_diversity_score(team: list[Pokemon]) -> float:
         """
         Calculate role diversity score (0-1).
 
@@ -80,3 +79,28 @@ class RoleDetector:
             return min(1.0, base_score + 0.1)
 
         return base_score
+
+    @staticmethod
+    def get_roles_added(input_team: list[Pokemon], full_team: list[Pokemon]) -> list[str]:
+        """
+        Get roles that were added by the trio.
+
+        Returns:
+            List of role names that input team didn't have but full team has
+        """
+        # Map internal role names to user-friendly names
+        role_name_map = {
+            "hazard_setter": "Hazard Setter",
+            "hazard_removal": "Hazard Control",
+            "pivot": "Pivot",
+            "speed_control": "Speed Control",
+        }
+
+        input_roles = RoleDetector.team_role_coverage(input_team)
+        full_roles = RoleDetector.team_role_coverage(full_team)
+
+        # Roles that were added
+        added_roles = full_roles - input_roles
+
+        # Convert to user-friendly names
+        return [role_name_map.get(role, role) for role in added_roles]

@@ -6,9 +6,8 @@ Hybrid approach: uses rule-based features + learned weights.
 from dataclasses import dataclass
 from itertools import combinations
 from pathlib import Path
-from typing import List, Optional
 
-from src.data.pokedex import Pokemon, Pokedex
+from src.data.pokedex import Pokedex, Pokemon
 from src.data.types import TypeChart
 from src.data.usage import UsageStats
 from src.features.coverage import CoverageAnalyzer
@@ -21,14 +20,28 @@ from src.ml.hybrid_ranker import HybridRanker
 class MLScoredRecommendation:
     """A recommended trio with ML-predicted score."""
 
-    trio: List[Pokemon]
+    trio: list[Pokemon]
     ml_score: float  # ML model prediction
     type_score: float  # Individual component scores for explainability
     meta_score: float
     role_score: float
 
+    # Explanation context (for UI explanations)
+    weaknesses_covered: list[str] = None  # Type names: ["Fire", "Ice"]
+    threats_handled: list[str] = None  # Pokemon names: ["Garchomp", "Kingambit"]
+    roles_added: list[str] = None  # Role names: ["Hazard Control", "Pivot"]
+
+    def __post_init__(self):
+        """Initialize empty lists for optional fields."""
+        if self.weaknesses_covered is None:
+            self.weaknesses_covered = []
+        if self.threats_handled is None:
+            self.threats_handled = []
+        if self.roles_added is None:
+            self.roles_added = []
+
     @property
-    def pokemon_names(self) -> List[str]:
+    def pokemon_names(self) -> list[str]:
         return [mon.name for mon in self.trio]
 
     @property
@@ -45,7 +58,7 @@ class MLTeamRecommender:
         pokedex: Pokedex,
         type_chart: TypeChart,
         usage_stats: UsageStats,
-        model_path: Optional[Path] = None,
+        model_path: Path | None = None,
         use_ml: bool = True,
     ):
         self.pokedex = pokedex
@@ -76,7 +89,7 @@ class MLTeamRecommender:
                 self.ml_ranker.save(model_path)
 
     def score_team(
-        self, input_team: List[Pokemon], candidate_trio: List[Pokemon]
+        self, input_team: list[Pokemon], candidate_trio: list[Pokemon]
     ) -> dict:
         """Score a complete 6-Pokémon team using ML model."""
         full_team = input_team + candidate_trio
@@ -102,10 +115,10 @@ class MLTeamRecommender:
 
     def recommend(
         self,
-        input_names: List[str],
+        input_names: list[str],
         top_k: int = 5,
         candidate_pool_size: int = 100,
-    ) -> List[MLScoredRecommendation]:
+    ) -> list[MLScoredRecommendation]:
         """
         Recommend trios to complete the input team.
 
@@ -142,14 +155,30 @@ class MLTeamRecommender:
         # Generate and score all possible trios
         recommendations = []
         for trio in combinations(candidates, 3):
-            scores = self.score_team(input_team, list(trio))
+            trio_list = list(trio)
+            full_team = input_team + trio_list
+
+            # Get scores
+            scores = self.score_team(input_team, trio_list)
+
+            # Get explanation context
+            weaknesses_covered = self.coverage_analyzer.get_weaknesses_covered(
+                input_team, full_team
+            )
+            threats_handled = self.meta_analyzer.get_threats_handled(
+                input_team, full_team
+            )
+            roles_added = self.role_detector.get_roles_added(input_team, full_team)
 
             rec = MLScoredRecommendation(
-                trio=list(trio),
+                trio=trio_list,
                 ml_score=scores["ml_score"],
                 type_score=scores["type_score"],
                 meta_score=scores["meta_score"],
                 role_score=scores["role_score"],
+                weaknesses_covered=weaknesses_covered,
+                threats_handled=threats_handled,
+                roles_added=roles_added,
             )
             recommendations.append(rec)
 

@@ -1,7 +1,7 @@
 """Meta matchup analysis against top threats."""
 
-from typing import List
-from src.data.pokedex import Pokemon, Pokedex
+
+from src.data.pokedex import Pokedex, Pokemon
 from src.data.types import TypeChart
 from src.data.usage import UsageStats
 
@@ -14,7 +14,7 @@ class MetaAnalyzer:
         self.pokedex = pokedex
         self.usage_stats = usage_stats
 
-    def has_check(self, team: List[Pokemon], threat: Pokemon) -> bool:
+    def has_check(self, team: list[Pokemon], threat: Pokemon) -> bool:
         """
         Check if team has at least one counter/check to a threat.
 
@@ -46,7 +46,7 @@ class MetaAnalyzer:
 
         return False
 
-    def meta_coverage_score(self, team: List[Pokemon], top_k: int = 15) -> float:
+    def meta_coverage_score(self, team: list[Pokemon], top_k: int = 15) -> float:
         """
         Calculate meta coverage score (0-1).
 
@@ -76,7 +76,7 @@ class MetaAnalyzer:
 
         return total_weighted / total_weight if total_weight > 0 else 0.0
 
-    def get_unchecked_threats(self, team: List[Pokemon], top_k: int = 15) -> List[str]:
+    def get_unchecked_threats(self, team: list[Pokemon], top_k: int = 15) -> list[str]:
         """Get list of meta threats that the team struggles against."""
         top_threats = self.usage_stats.get_top_k(k=top_k)
         unchecked = []
@@ -90,3 +90,20 @@ class MetaAnalyzer:
                 unchecked.append(entry.name)
 
         return unchecked
+
+    def get_threats_handled(
+        self, input_team: list[Pokemon], full_team: list[Pokemon], top_k: int = 15
+    ) -> list[str]:
+        """
+        Get threats that are now handled after adding the trio.
+
+        Returns:
+            List of threat names that input team couldn't check but full team can
+        """
+        input_unchecked = set(self.get_unchecked_threats(input_team, top_k))
+        full_unchecked = set(self.get_unchecked_threats(full_team, top_k))
+
+        # Threats that were unchecked but are now checked
+        handled = list(input_unchecked - full_unchecked)
+
+        return handled
