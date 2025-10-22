@@ -66,14 +66,49 @@ Score = 0.4×TypeCoverage + 0.4×MetaMatchup + 0.2×RoleDiversity
 
 ## Local Development
 
+### Quick Setup (Unix/Linux/macOS)
+
 ```bash
 git clone https://github.com/your-username/pokemon-team-recommender.git
 cd pokemon-team-recommender
 
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+# Use the setup script (recommended)
+./scripts/setup.sh
+```
 
-pip install -r requirements.txt
+### Quick Setup (Windows)
+
+```cmd
+git clone https://github.com/your-username/pokemon-team-recommender.git
+cd pokemon-team-recommender
+
+# Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate.bat
+
+# Install package in editable mode with dev dependencies
+pip install -e ".[dev]"
+```
+
+### Manual Setup (All Platforms)
+
+**Unix/Linux/macOS:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -e ".[dev]"
+```
+
+**Windows:**
+```cmd
+python -m venv venv
+venv\Scripts\activate.bat
+pip install -e ".[dev]"
+```
+
+### Running the App
+
+```bash
 python app.py
 ```
 
@@ -82,7 +117,9 @@ Visit `http://localhost:7860`
 ## Testing
 
 ```bash
+# Run all tests with coverage
 pytest tests/unit/ -v
+
 # 28 tests, 93% coverage
 ```
 
