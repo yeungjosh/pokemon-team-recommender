@@ -22,6 +22,7 @@ tags:
 > Machine learning-driven team completion for competitive Pokémon using Gradient Boosting
 
 [![Live Demo](https://img.shields.io/badge/🤗-Live%20Demo-yellow.svg)](https://huggingface.co/spaces/joshuajoshy/pokemon-team-recommender)
+[![Validation Study](https://img.shields.io/badge/📊-Validation%20Study-blue.svg)](https://github.com/yeungjosh/pokemon-real-data-experiment)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-28%20passed-brightgreen.svg)]()
@@ -32,6 +33,33 @@ tags:
 **Result:** Optimized 6-Pokémon team balanced for type coverage, meta matchup, and role synergy
 
 [Try it live →](https://huggingface.co/spaces/joshuajoshy/pokemon-team-recommender)
+
+---
+
+## ⚠️ Validation Study
+
+This model was trained on **synthetic data** (10K algorithmically-generated teams). A [validation study using 5,000 real Pokemon Showdown battles](https://github.com/yeungjosh/pokemon-real-data-experiment) revealed the synthetic model **overestimated meta matchup importance by 38%**. Real battles prioritize raw stats (bulk + speed = 62%) over strategic factors.
+
+**Key finding:** Weak supervision can inject bias. See the [research report](https://github.com/yeungjosh/pokemon-real-data-experiment/blob/main/REPORT.md) for full analysis.
+
+---
+
+## 🔗 Related Projects
+
+This is part of a series exploring different approaches to Pokémon team recommendations:
+
+- **[Validation Study](https://github.com/yeungjosh/pokemon-real-data-experiment)** - Trained on 5,000 real Pokémon Showdown battles to validate synthetic model assumptions. Key finding: meta matchup overestimated by 38%, bulk + speed underestimated by 60%.
+- **[Collaborative Filtering Approach](https://github.com/yeungjosh/pokemon-cf-recommender)** - Alternative recommendation system using item-item similarity ("Pokémon that appear together should be recommended together"). No domain knowledge required - learns purely from team co-occurrence patterns.
+
+**Comparison:**
+
+| Approach | This Repo (ML+Rules) | CF Repo | Validation Study |
+|----------|----------------------|---------|------------------|
+| **Method** | Feature engineering + ML | Co-occurrence patterns | Real battle outcomes |
+| **Data** | Synthetic (10K teams) | Synthetic/Real teams | Real (5K battles) |
+| **Domain Knowledge** | Required (type charts, roles) | Not required | Not required |
+| **Explainability** | High (feature importances) | Low (similarity scores) | High (ground truth) |
+| **Purpose** | Production recommender | Alternative approach | Model validation |
 
 ---
 
