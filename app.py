@@ -62,6 +62,16 @@ def get_pokemon_name_with_types(mon_name: str) -> str:
     return f"{mon_name} {type_badges}"
 
 
+def get_pokemon_name_with_types_text(mon_name: str) -> str:
+    """Get Pokemon name with types as plain text (for Markdown compatibility)."""
+    mon = pokedex.get(mon_name)
+    if not mon:
+        return mon_name
+
+    types_text = "/".join(mon.types)
+    return f"{mon_name} `[{types_text}]`"
+
+
 def get_pokemon_sprite(mon_name: str) -> str:
     """Get HTML for displaying a Pokemon sprite with type badges."""
     if not mon_name:
@@ -213,14 +223,8 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
                     result += f'<img src="{mon.sprite}" width="96" height="96" style="display:inline-block; margin:0 10px;" alt="{mon_name}"> '
             result += "\n\n"
 
-            # Display trio with type badges
-            trio_with_types = []
-            for mon_name in rec.pokemon_names:
-                mon = pokedex.get(mon_name)
-                if mon:
-                    type_badges = " ".join(get_type_badge(t) for t in mon.types)
-                    trio_with_types.append(f"**{mon_name}** {type_badges}")
-
+            # Display trio with types (plain text for markdown)
+            trio_with_types = [get_pokemon_name_with_types_text(name) for name in rec.pokemon_names]
             result += "**Team:** " + " • ".join(trio_with_types) + "\n\n"
 
             # Add recommended moves for each Pokemon
@@ -230,8 +234,8 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
                 if mon:
                     moves = recommend_moves(mon)
                     if moves:
-                        type_badges = " ".join(get_type_badge(t) for t in mon.types)
-                        result += f"- **{mon_name}** {type_badges}: {' / '.join(moves)}\n"
+                        name_with_types = get_pokemon_name_with_types_text(mon_name)
+                        result += f"- {name_with_types}: {' / '.join(moves)}\n"
 
             result += "\n"
 
