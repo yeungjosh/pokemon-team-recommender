@@ -360,14 +360,26 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
             <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0;">
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/great-tusk.png" width="96" height="96" alt="Great Tusk">
+                    <div style="margin-top: 8px; display: flex; gap: 4px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #E0C068; color: white; padding: 3px 10px; border-radius: 4px; font-weight: bold; font-size: 10px; margin: 2px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3); white-space: nowrap;">GROUND</span>
+                        <span style="display: inline-block; background-color: #C03028; color: white; padding: 3px 10px; border-radius: 4px; font-weight: bold; font-size: 10px; margin: 2px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3); white-space: nowrap;">FIGHTING</span>
+                    </div>
                     <p style="margin-top: 5px; font-weight: bold;">Great Tusk</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/raging-bolt.png" width="96" height="96" alt="Raging Bolt">
+                    <div style="margin-top: 8px; display: flex; gap: 4px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #F8D030; color: white; padding: 3px 10px; border-radius: 4px; font-weight: bold; font-size: 10px; margin: 2px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3); white-space: nowrap;">ELECTRIC</span>
+                        <span style="display: inline-block; background-color: #7038F8; color: white; padding: 3px 10px; border-radius: 4px; font-weight: bold; font-size: 10px; margin: 2px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3); white-space: nowrap;">DRAGON</span>
+                    </div>
                     <p style="margin-top: 5px; font-weight: bold;">Raging Bolt</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/kingambit.png" width="96" height="96" alt="Kingambit">
+                    <div style="margin-top: 8px; display: flex; gap: 4px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #705848; color: white; padding: 3px 10px; border-radius: 4px; font-weight: bold; font-size: 10px; margin: 2px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3); white-space: nowrap;">DARK</span>
+                        <span style="display: inline-block; background-color: #B8B8D0; color: white; padding: 3px 10px; border-radius: 4px; font-weight: bold; font-size: 10px; margin: 2px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3); white-space: nowrap;">STEEL</span>
+                    </div>
                     <p style="margin-top: 5px; font-weight: bold;">Kingambit</p>
                 </div>
             </div>
@@ -386,32 +398,56 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/great-tusk.png" width="80" height="80" alt="Great Tusk">
-                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Great Tusk</p>
+                    <div style="margin-top: 6px; display: flex; gap: 3px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #E0C068; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">GROUND</span>
+                        <span style="display: inline-block; background-color: #C03028; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">FIGHTING</span>
+                    </div>
+                    <p style="margin-top: 4px; font-size: 0.9em; font-weight: bold;">Great Tusk</p>
                     <p style="margin: 0; font-size: 0.8em; color: #888;">Hazard Control</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/raging-bolt.png" width="80" height="80" alt="Raging Bolt">
-                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Raging Bolt</p>
+                    <div style="margin-top: 6px; display: flex; gap: 3px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #F8D030; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">ELECTRIC</span>
+                        <span style="display: inline-block; background-color: #7038F8; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">DRAGON</span>
+                    </div>
+                    <p style="margin-top: 4px; font-size: 0.9em; font-weight: bold;">Raging Bolt</p>
                     <p style="margin: 0; font-size: 0.8em; color: #888;">Special Attacker</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/kingambit.png" width="80" height="80" alt="Kingambit">
-                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Kingambit</p>
+                    <div style="margin-top: 6px; display: flex; gap: 3px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #705848; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">DARK</span>
+                        <span style="display: inline-block; background-color: #B8B8D0; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">STEEL</span>
+                    </div>
+                    <p style="margin-top: 4px; font-size: 0.9em; font-weight: bold;">Kingambit</p>
                     <p style="margin: 0; font-size: 0.8em; color: #888;">Priority Revenge Killer</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/gholdengo.png" width="80" height="80" alt="Gholdengo">
-                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Gholdengo</p>
+                    <div style="margin-top: 6px; display: flex; gap: 3px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #B8B8D0; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">STEEL</span>
+                        <span style="display: inline-block; background-color: #705898; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">GHOST</span>
+                    </div>
+                    <p style="margin-top: 4px; font-size: 0.9em; font-weight: bold;">Gholdengo</p>
                     <p style="margin: 0; font-size: 0.8em; color: #888;">Hazard Immunity</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/corviknight.png" width="80" height="80" alt="Corviknight">
-                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Corviknight</p>
+                    <div style="margin-top: 6px; display: flex; gap: 3px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #A890F0; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">FLYING</span>
+                        <span style="display: inline-block; background-color: #B8B8D0; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">STEEL</span>
+                    </div>
+                    <p style="margin-top: 4px; font-size: 0.9em; font-weight: bold;">Corviknight</p>
                     <p style="margin: 0; font-size: 0.8em; color: #888;">Physical Wall</p>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/slowking-galarian.png" width="80" height="80" alt="Slowking-Galar">
-                    <p style="margin-top: 5px; font-size: 0.9em; font-weight: bold;">Slowking-Galar</p>
+                    <div style="margin-top: 6px; display: flex; gap: 3px; justify-content: center;">
+                        <span style="display: inline-block; background-color: #A040A0; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">POISON</span>
+                        <span style="display: inline-block; background-color: #F85888; color: white; padding: 2px 8px; border-radius: 3px; font-weight: bold; font-size: 9px; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);">PSYCHIC</span>
+                    </div>
+                    <p style="margin-top: 4px; font-size: 0.9em; font-weight: bold;">Slowking-Galar</p>
                     <p style="margin: 0; font-size: 0.8em; color: #888;">Special Wall + Pivot</p>
                 </div>
             </div>
