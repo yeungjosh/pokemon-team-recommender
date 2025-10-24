@@ -81,9 +81,11 @@ def get_pokemon_sprite(mon_name: str) -> str:
     if mon and mon.sprite:
         type_badges = "".join(get_type_badge(t) for t in mon.types)
         return f'''
-        <div style="text-align: center; margin: 10px 0;">
-            <img src="{mon.sprite}" width="96" height="96" alt="{mon_name}"><br>
-            {type_badges}
+        <div style="display: flex; flex-direction: column; align-items: center; margin: 10px 0;">
+            <img src="{mon.sprite}" width="96" height="96" alt="{mon_name}" style="display: block; margin-bottom: 8px;">
+            <div style="display: flex; gap: 4px; justify-content: center; flex-wrap: wrap;">
+                {type_badges}
+            </div>
         </div>
         '''
     return ""
