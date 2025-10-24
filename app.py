@@ -193,8 +193,8 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
         if not recommendations:
             return "No recommendations found. Try different Pokémon!", ""
 
-        # Format results with sprites
-        result = f"## Top {len(recommendations)} Recommendations\n\n"
+        # Format results as HTML
+        result = f"<h2>Top {len(recommendations)} Recommendations</h2>"
 
         # Generate explanation for the top recommendation
         top_rec = recommendations[0]
@@ -214,41 +214,54 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
         explanation_markdown = format_layman_explanation(explanation_data)
 
         for i, rec in enumerate(recommendations, 1):
-            result += f"### #{i} - Score: {rec.composite_score:.3f}\n\n"
+            result += f'<h3 style="margin-top: 30px;">#{i} - Score: {rec.composite_score:.3f}</h3>'
 
-            # Add sprites for the trio - simple inline images
+            # Build Pokemon cards with centered sprites and type badges
+            result += '<div style="display: flex; justify-content: center; gap: 25px; margin: 20px 0; flex-wrap: wrap;">'
             for mon_name in rec.pokemon_names:
                 mon = pokedex.get(mon_name)
                 if mon and mon.sprite:
-                    result += f'<img src="{mon.sprite}" width="96" height="96" style="display:inline-block; margin:0 10px;" alt="{mon_name}"> '
-            result += "\n\n"
-
-            # Display trio with types (plain text for markdown)
-            trio_with_types = [get_pokemon_name_with_types_text(name) for name in rec.pokemon_names]
-            result += "**Team:** " + " • ".join(trio_with_types) + "\n\n"
+                    type_badges = "".join(get_type_badge(t) for t in mon.types)
+                    result += f'''
+                        <div style="text-align: center; min-width: 110px;">
+                            <img src="{mon.sprite}" width="96" height="96" alt="{mon_name}" style="display: block; margin: 0 auto;">
+                            <div style="margin-top: 8px; display: flex; gap: 4px; justify-content: center; flex-wrap: wrap;">{type_badges}</div>
+                            <div style="margin-top: 6px; font-weight: bold; font-size: 0.95em; color: #333;">{mon_name}</div>
+                        </div>
+                    '''
+            result += '</div>'
 
             # Add recommended moves for each Pokemon
-            result += "**Recommended Moves:**\n"
+            result += '<div style="margin: 20px 0;"><strong>Recommended Moves:</strong><ul style="margin-top: 8px;">'
             for mon_name in rec.pokemon_names:
                 mon = pokedex.get(mon_name)
                 if mon:
                     moves = recommend_moves(mon)
                     if moves:
-                        name_with_types = get_pokemon_name_with_types_text(mon_name)
-                        result += f"- {name_with_types}: {' / '.join(moves)}\n"
+                        type_badges = " ".join(get_type_badge(t) for t in mon.types)
+                        result += f'<li><strong>{mon_name}</strong> {type_badges}: {" / ".join(moves)}</li>'
+            result += '</ul></div>'
 
-            result += "\n"
-
-            # Add team strength analysis for all recommendations
+            # Add team strength analysis
             team_analysis = analyze_team_strength(input_team, rec.pokemon_names)
             if team_analysis:
-                result += f"{team_analysis}\n"
+                # Convert markdown to HTML
+                team_analysis_html = team_analysis.replace("**Why this team is strong:**", "<strong>Why this team is strong:</strong>")
+                team_analysis_html = team_analysis_html.replace("✅", "✅").replace("\n- ", "<br>• ")
+                result += f'<div style="margin: 15px 0;">{team_analysis_html}</div>'
 
-            result += "**Breakdown:**\n"
-            result += f"- Type Coverage: {rec.type_score:.3f}\n"
-            result += f"- Meta Matchup: {rec.meta_score:.3f}\n"
-            result += f"- Role Diversity: {rec.role_score:.3f}\n\n"
-            result += "---\n\n"
+            # Breakdown
+            result += f'''
+                <div style="margin: 15px 0;">
+                    <strong>Breakdown:</strong>
+                    <ul style="margin-top: 5px;">
+                        <li>Type Coverage: {rec.type_score:.3f}</li>
+                        <li>Meta Matchup: {rec.meta_score:.3f}</li>
+                        <li>Role Diversity: {rec.role_score:.3f}</li>
+                    </ul>
+                </div>
+            '''
+            result += '<hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">'
 
         return result, explanation_markdown
 
@@ -327,7 +340,7 @@ with gr.Blocks(title="Pokémon Team Recommender") as demo:
 
         with gr.Column():
             gr.Markdown("### Recommendations")
-            output = gr.Markdown()
+            output = gr.HTML()
 
             # Explanation accordion (only visible after recommendations generated)
             explanation_accordion = gr.Accordion("❓ How did you choose these?", open=False, visible=False)
