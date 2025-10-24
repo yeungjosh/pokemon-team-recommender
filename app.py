@@ -70,10 +70,12 @@ def get_pokemon_sprite(mon_name: str) -> str:
     mon = pokedex.get(mon_name)
     if mon and mon.sprite:
         type_badges = "".join(get_type_badge(t) for t in mon.types)
-        return f'''<div style="text-align: center; margin: 10px auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <img src="{mon.sprite}" width="96" height="96" alt="{mon_name}" style="display: block;">
-            <div style="margin-top: 8px; display: flex; gap: 4px; justify-content: center;">{type_badges}</div>
-        </div>'''
+        return f'''
+        <div style="text-align: center; margin: 10px 0;">
+            <img src="{mon.sprite}" width="96" height="96" alt="{mon_name}"><br>
+            {type_badges}
+        </div>
+        '''
     return ""
 
 
@@ -204,21 +206,22 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
         for i, rec in enumerate(recommendations, 1):
             result += f"### #{i} - Score: {rec.composite_score:.3f}\n\n"
 
-            # Add sprites and type badges for the trio in a nice card layout
-            sprite_cards = '<div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0; flex-wrap: wrap;">'
+            # Add sprites for the trio - simple inline images
             for mon_name in rec.pokemon_names:
                 mon = pokedex.get(mon_name)
                 if mon and mon.sprite:
-                    type_badges = "".join(get_type_badge(t) for t in mon.types)
-                    sprite_cards += f'''
-                        <div style="text-align: center; min-width: 100px;">
-                            <img src="{mon.sprite}" width="96" height="96" alt="{mon_name}" style="display: block; margin: 0 auto;">
-                            <div style="margin-top: 8px; font-weight: bold; font-size: 0.9em;">{mon_name}</div>
-                            <div style="margin-top: 6px; display: flex; gap: 4px; justify-content: center; flex-wrap: wrap;">{type_badges}</div>
-                        </div>
-                    '''
-            sprite_cards += '</div>\n\n'
-            result += sprite_cards
+                    result += f'<img src="{mon.sprite}" width="96" height="96" style="display:inline-block; margin:0 10px;" alt="{mon_name}"> '
+            result += "\n\n"
+
+            # Display trio with type badges
+            trio_with_types = []
+            for mon_name in rec.pokemon_names:
+                mon = pokedex.get(mon_name)
+                if mon:
+                    type_badges = " ".join(get_type_badge(t) for t in mon.types)
+                    trio_with_types.append(f"**{mon_name}** {type_badges}")
+
+            result += "**Team:** " + " • ".join(trio_with_types) + "\n\n"
 
             # Add recommended moves for each Pokemon
             result += "**Recommended Moves:**\n"
@@ -227,8 +230,8 @@ def recommend_team(mon1: str, mon2: str, mon3: str, tier: str) -> tuple[str, str
                 if mon:
                     moves = recommend_moves(mon)
                     if moves:
-                        name_with_types = get_pokemon_name_with_types(mon_name)
-                        result += f"- **{name_with_types}:** {' / '.join(moves)}\n"
+                        type_badges = " ".join(get_type_badge(t) for t in mon.types)
+                        result += f"- **{mon_name}** {type_badges}: {' / '.join(moves)}\n"
 
             result += "\n"
 
