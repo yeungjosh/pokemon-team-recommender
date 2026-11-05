@@ -45,5 +45,7 @@ def test_get_all_names():
     all_names = usage.get_all_names(tier="OU")
     assert len(all_names) > 0
 
-    # First should be highest usage (Dragapult in sample data)
-    assert all_names[0] == "Dragapult"
+    # First should be the highest-usage Pokémon in the OU data
+    ou = usage.df[usage.df["tier"] == "OU"]
+    assert all_names[0] == ou.loc[ou["usage_pct"].idxmax(), "name"]
+    assert len(all_names) == len(ou)
